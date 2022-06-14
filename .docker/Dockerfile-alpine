@@ -33,3 +33,5 @@ USER 10000
 
 ENTRYPOINT ["kratos"]
 CMD ["serve"]
+
+HEALTHCHECK --interval=10s --timeout=10s --start-period=10s --retries=3 CMD curl -m 5 --silent --fail --request GET http://localhost:4433/health/ready
